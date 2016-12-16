@@ -1,26 +1,22 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: bbugariu
- * Date: 12/15/2016
- * Time: 4:35 PM
+ * Date: 12/16/2016
+ * Time: 5:28 PM
  */
 
-namespace Intuitext\WebPos\Controller\Index;
+namespace Mageplaza\HelloWorld\Controller\Index;
+
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
-use Magento\Framework\View\Result\PageFactory;
 
-class Index extends Action
+class Display extends Action
 {
-    protected $_resultPageFactory;
-
-    public function __construct(Context $context, PageFactory $resultPageFactory)
+    public function __construct(Context $context)
     {
-        $this->_resultPageFactory = $resultPageFactory;
         parent::__construct($context);
     }
 
@@ -32,6 +28,7 @@ class Index extends Action
      */
     public function execute()
     {
-        return $this->_resultPageFactory->create();
+        echo 'Hello World';
+        exit;
     }
 }
